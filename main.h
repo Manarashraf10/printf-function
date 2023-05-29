@@ -17,6 +17,10 @@ typedef struct specifier
 
 int _printf(const char *format, ...);
 int _putchar(char c);
+int _puts(char *str);
+int char_format(va_list p);
+int string_format(va_list p);
+int percent_format(va_list p);
 void (*select_format(char *format))
 
 
