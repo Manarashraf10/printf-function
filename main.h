@@ -7,6 +7,7 @@
 #include <stdarg.h>
 #include <limits.h>
 #include <stdlib.h>
+
 /**
  * struct flags - struct containing flags
  * @plus: flag for '+' character
@@ -15,9 +16,9 @@
 */
 typedef struct flags
 {
-	int plus;
-	int space;
-	int hash;
+	unsigned int plus   : 1;
+	unsigned int space  : 1;
+	unsigned int hash   : 1; 
 } flags_t;
 
 /**
@@ -35,11 +36,11 @@ int (*f)(va_list p, flags_t *f);
 int _printf(const char *format, ...);
 int _putchar(char c);
 int _puts(char *str);
-int char_format(va_list 1, flags_t *f);
-int string_format(va_list 1, flags_t *f)
-int percent_format(va_list 1, flags_t *f);
-void (*select_format(char *format))
-
+int char_format(va_list p, flags_t *f);
+int string_format(va_list p, flags_t *f);
+int percent_format(va_list p, flags_t *f);
+int get_flag(char s, flags_t *f);
+int (*get_print(char s))(va_list, flags_t *);
 
 
 
