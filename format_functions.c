@@ -9,7 +9,7 @@ int char_format(va_list p, flags_t *f)
 {
 	(void)f;
 	_putchar(va_arg(p, int));
-	return (p);
+	return (1);
 }
 /**
  * string_format - a function print string
