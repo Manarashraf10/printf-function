@@ -29,15 +29,15 @@ typedef struct flags
 typedef struct specifier
 {
 char c;
-int (*f)(va_list p, flag_t *f);
+int (*f)(va_list p, flags_t *f);
 } sp;
 
 int _printf(const char *format, ...);
 int _putchar(char c);
 int _puts(char *str);
-int char_format(va_list p);
-int string_format(va_list p);
-int percent_format(va_list p);
+int char_format(va_list 1, flags_t *f);
+int string_format(va_list 1, flags_t *f)
+int percent_format(va_list 1, flags_t *f);
 void (*select_format(char *format))
 
 
