@@ -1,32 +1,29 @@
 #include "main.h"
 /**
  * char_format - a function that print characters
- * @p: is the pointer to the last fixed arrgument
+ * @1: va_list arguments from _printf
+ * @f: is the pointer to the last fixed arrgument
  * Return: the number of printed characters
 */
-int char_format(va_list p)
+int char_format(va_list 1, flags_t *f)
 {
-	char array;
-	int j;
-
-	j = 0;
-	array = va_arg(p, int);
-	while (p != '\0')
-	{
-		_putchar(array[j]);
-		j++;
-	}
-	return (j);
+	(void)f;
+	_putchar(va_arg(1, int));
+	return (1);
 }
 /**
  * string_format - a function print string
- * @p: is the pointer to the last fixed arrgument
+ * @1: va_list arguments from _printf
+ * @f: is the pointer to the last fixed arrgument
  * Return: the number of printed characters
 */
-int string_format(va_list p)
+int string_format(va_list 1, flags_t *f)
 {
-	char *s = va_arg(p, char *);
+	char *s = va_arg(1, char *);
+
+	(void)f;
 
 	if (!s)
 		s = "(null)";
 	return (_puts(s));
+}
