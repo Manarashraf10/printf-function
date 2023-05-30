@@ -6,7 +6,7 @@
 */
 int char_format(va_list p)
 {
-	char *array;
+	char array;
 	int j;
 
 	j = 0;
