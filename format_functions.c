@@ -19,7 +19,7 @@ int char_format(va_list p)
 	return (j);
 }
 /**
- * string_format - a function print string 
+ * string_format - a function print string
  * @p: is the pointer to the last fixed arrgument
  * Return: the number of printed characters
 */

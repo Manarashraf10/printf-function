@@ -1,19 +1,36 @@
-#ifndef main_h
-#define main_h
+#ifndef MAIN_H
+#define MAIN_H
+
+
 #include <stdio.h>
 #include <unistd.h>
+#include <stdarg.h>
+#include <limits.h>
+#include <stdlib.h>
+/**
+ * struct flags - struct containing flags
+ * @plus: flag for '+' character
+ * @space: flag for ' ' character
+ * @hash: flag for '#' character
+*/
+typedef struct flags
+{
+	int plus;
+	int space;
+	int hash;
+} flags_t;
 
 /**
  * struct specifier - Struct specifier
  *
- * @sp: The operator
- * @f: The function associated
+ * @c: format specifier
+ * @f: pointer to the correct printing function
  */
 typedef struct specifier
 {
-    char *sp;
-    int (*f)(int a, int b);
-} sp_fire;
+char c;
+int (*f)(va_list p, flag_t *f);
+} sp;
 
 int _printf(const char *format, ...);
 int _putchar(char c);
